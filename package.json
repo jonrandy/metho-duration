@@ -1,0 +1,34 @@
+{
+  "name": "metho-duration",
+  "version": "0.0.1",
+  "description": "A library using Metho for managing time durations",
+  "type": "module",
+  "module": "metho-duration.js",
+  "sideEffects": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonrandy/metho-duration.git"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "methods",
+    "object",
+    "syntax",
+    "metho",
+    "duration",
+    "prototype"
+  ],
+  "author": "Jon Randy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonrandy/metho-duration/issues"
+  },
+  "homepage": "https://github.com/jonrandy/metho-duration#readme",
+  "dependencies": {
+    "metho": "^1.0.0"
+  }
+}
