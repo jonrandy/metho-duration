@@ -17,12 +17,50 @@
 			import * as md from "./metho-duration.js"
 			Object.assign(window, md)
 
-			// const myDuration  = 2[hr] (1[min]) (0[sec]) (123[ms])
-			// const myDuration2 = 2[hr] (37[min], 5[sec], 123[ms])
-			// const myDuration3 = 2[hr] + 37[min] + 5[sec] + 123[ms]
+			// different syntaxes
+
+			const myDuration  = 2[hr] (1[min]) (0[sec]) (123[ms])
+			const myDuration2 = 2[hr] (37[min], 5[sec], 123[ms])
+			const myDuration3 = duration(4[day] + 0[hr] + 37[min] + 5[sec] + 123[ms])
+			
+			
+			// can be added
+			const total = duration( 2[hr](30[min]) + 15[min] )
+			console.log('Total is: ' + total.toString()) // Total is: 2 hours 45 minutes
+
+			// toString (omitzeroparts), toStringParts (omitzeroparts - default true)
+			console.log(myDuration3.toString())
+			console.log(myDuration3.toStringParts())
+
+			console.log(myDuration3.toString(false))
+			console.log(myDuration3.toStringParts(false))
+			console.log(myDuration3)
+
+			// valueOf (with applications) - gives duration in ms
+			const fiveSecondsInMS = +5[sec]
+			console.log(fiveSecondsInMS)
+
+			// Add durations to dates
+			const now = new Date()
+			console.log(now[addTime(3[hr])])
+
+			// conversion
+			console.log( 5[hr](30[min]).in(min) ) // 330
+
+			const [inMinutes, inHours] = 5[hr] (30[min]) .in(min, hr)
+			console.log( inMinutes, inHours ) // 330, 5.5
+
+			// parts
+			const [tw, td, th, tm, ts, tms] = myDuration2.parts
+			console.log(`weeks ${tw}, days ${td}, hours ${th}, minutes ${tm}, seconds ${ts}, milliseconds ${tms}`)
+
+			
+
+
+
 
 			// console.log(
-			// 	+myDuration,
+			// 	+myDuration,  // 
 			// 	+myDuration2,
 			// 	myDuration.toString(),
 			// 	duration(2[hr] + 37[min] + 5[sec] + 123[ms]).parts 
