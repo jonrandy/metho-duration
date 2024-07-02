@@ -56,6 +56,15 @@ export const duration = (...parts) => {
 	})
 }
 
+// covenience function to get duration between two dates
+export const timeBetween = (start, end) => {
+	// timestamps (string or number) or date objects will work
+	start = +start
+	end = +end
+	if (start > end) [start, end] = [end, start]
+	return duration(end - start)
+}
+
 // Safely extend the built-in Number prototype to allow creation of duration types directly from numbers (3[hr])
 const syms = {}
 DURATION_UNITS.forEach(({ id, ms }) => {
