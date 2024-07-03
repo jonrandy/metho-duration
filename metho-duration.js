@@ -3,6 +3,16 @@ import * as Metho from "metho"
 // Duration Unit definitions
 const DURATION_UNITS = [
 	{
+		id: "yr",
+		ms: 1000 * 60 * 60 * 24 * 365.25,
+		nouns: ["year", "years"],
+	},
+	{
+		id: "mon",
+		ms: 1000 * 60 * 60 * 24 * 30.4375,
+		nouns: ["month", "months"],
+	},
+	{
 		id: "wk",
 		ms: 1000 * 60 * 60 * 24 * 7,
 		nouns: ["week", "weeks"],
@@ -72,7 +82,7 @@ DURATION_UNITS.forEach(({ id, ms }) => {
 		return duration(this * ms)
 	}, { symbolName: id })
 })
-export const { ms, sec, min, hr, day, wk } = syms
+export const { ms, sec, min, hr, day, wk, mon, yr } = syms
 
 // Safely extend built-in Date prototype to allow adding durations to dates
 export const addTime = Metho.add(Date.prototype, function addTime(duration) {
