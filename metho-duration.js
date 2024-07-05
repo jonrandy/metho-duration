@@ -4,7 +4,7 @@ import * as Metho from "metho"
 const DURATION_UNITS = [
 	{
 		id: "yr",
-		ms: 1000 * 60 * 60 * 24 * 365.25,
+		ms: 1000 * 60 * 60 * 24 * 365.2422,
 		nouns: ["year", "years"],
 	},
 	{

@@ -3,7 +3,7 @@ A library using [Metho](https://github.com/jonrandy/metho) for managing time dur
 
 ## Usage
 ```js
-import { duration, ms, sec, min, hr, day, wk } from "metho-duration"
+import { duration, timeBetween, ms, sec, min, hr, day, wk, mon, yr } from "metho-duration"
 
 
 ```
