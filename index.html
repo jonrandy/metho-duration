@@ -14,7 +14,7 @@
 		</script>
 
 		<script type="module">
-			import * as md from "./metho-duration.js"
+			import {default as md, isCleanImport } from "./metho-duration.js"
 			Object.assign(window, md)
 
 			// different syntaxes
@@ -40,9 +40,9 @@
 			const fiveSecondsInMS = +5[sec]
 			console.log(fiveSecondsInMS)
 
-			// Add durations to dates
-			const now = new Date()
-			console.log(now[addTime(3[hr])])
+			// // Add durations to dates
+			// const now = new Date()
+			// console.log(now[addTime(3[hr])])
 
 			// conversion
 			console.log( 5[hr](30[min]).in(min) ) // 330
@@ -50,13 +50,21 @@
 			const [inMinutes, inHours] = 5[hr] (30[min]) .in(min, hr)
 			console.log( inMinutes, inHours ) // 330, 5.5
 
+
 			// parts
-			const [tw, td, th, tm, ts, tms] = myDuration2.parts
-			console.log(`weeks ${tw}, days ${td}, hours ${th}, minutes ${tm}, seconds ${ts}, milliseconds ${tms}`)
+			const [ty, tmon, tw, td, th, tm, ts, tms] = myDuration2.parts
+			console.log(myDuration2.parts)
+			console.log(`years ${ty}, months ${tmon}, weeks ${tw}, days ${td}, hours ${th}, minutes ${tm}, seconds ${ts}, milliseconds ${tms}`)
 
 			//timeBetween
 			console.log(timeBetween(new Date('05/04/1976'), new Date()).toString() )
+			console.log(timeBetween(new Date('05/04/1976'), new Date()).in(yr))
 
+			// some conveniences for nice duration and subtraction from dates
+			if (!isCleanImport) {
+				console.log(4[hr].from(now))
+				console.log(4[hr].before(now))
+			}
 			
 
 
